@@ -17,6 +17,8 @@ async function createUserAsAdmin(payload) {
     await supabaseAdmin.auth.admin.createUser({
       email,
       password,
+      phone: phone,
+      phone_confirm: true,
       email_confirm: true,
       user_metadata: {
         "role":role,
